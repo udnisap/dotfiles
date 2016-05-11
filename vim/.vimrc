@@ -68,8 +68,7 @@ let mapleader = ","
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " NERDTree
-nnoremap <silent> <Leader>v :NERDTreeTabsFind<CR>
-nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <Leader>f :NERDTreeFind<Enter>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
