@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'               
 Plugin 'taglist.vim'                        
 Plugin 'terryma/vim-multiple-cursors'       
+Plugin 'tomtom/tcomment_vim'       
 Plugin 'tpope/vim-surround'                 
 Plugin 'vim-scripts/vis'                    
 
