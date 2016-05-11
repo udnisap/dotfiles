@@ -9,15 +9,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'fugitive.vim'
 
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlp/ctrlp.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'taglist.vim'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ctrlp/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/vis'
 
 
 filetype plugin indent on
