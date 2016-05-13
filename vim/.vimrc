@@ -33,6 +33,8 @@ Plugin 'vim-airline/vim-airline-themes'
 call vundle#end() 
 filetype plugin indent on
 
+" mouse support for scrolling
+set mouse=a
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -70,7 +72,21 @@ let g:syntastic_check_on_wq = 0
 " Buffer
 set hidden
 set autoread 
+set autowriteall
 
+
+" scroll
+set scrolloff=10
+set scrolljump=5
+
+" search 
+set ignorecase
+set smartcase
+
+" Reload vimrc when edited
+autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
+      \ so $MYVIMRC | if has('gui_running') | source $MYGVIMRC | endif |
+      AirlineRefresh
 
 " Leader
 let mapleader = ","
