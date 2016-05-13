@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'fugitive.vim'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'                      
@@ -26,10 +26,17 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'                              
 Plugin 'tpope/vim-surround'                               
 Plugin 'vim-scripts/vis'                                  
+Plugin 'vim-airline/vim-airline'                                  
+Plugin 'vim-airline/vim-airline-themes'
+
 
 call vundle#end() 
 filetype plugin indent on
 
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " easy motion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
