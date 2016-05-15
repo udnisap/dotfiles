@@ -84,9 +84,9 @@ set ignorecase
 set smartcase
 
 " Reload vimrc when edited
-autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
-      \ so $MYVIMRC | if has('gui_running') | source $MYGVIMRC | endif |
-      AirlineRefresh
+" autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
+"       \ so $MYVIMRC | if has('gui_running') | source $MYGVIMRC | endif |
+"       AirlineRefresh
 
 " Leader
 let mapleader = ","
