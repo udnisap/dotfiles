@@ -65,16 +65,21 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " ctags
 filetype plugin on
+:set tags=./tags;
+:let g:easytags_dynamic_files = 1
+:let g:easytags_events = ['BufWritePost']
 
 " Sfiletype plugin onyntactic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Buffer
 set hidden
