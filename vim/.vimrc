@@ -36,10 +36,19 @@ Plugin 'moll/vim-node'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 
 call vundle#end() 
 filetype plugin indent on
+
+
+" Utilsnipperts
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
 
 
 "js library syntax
