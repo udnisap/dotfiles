@@ -35,6 +35,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'moll/vim-node'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'SirVer/ultisnips'
 
 
 call vundle#end() 
