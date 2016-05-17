@@ -32,6 +32,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
 Plugin 'Raimondi/delimitMate'
+Plugin 'moll/vim-node'
 
 
 call vundle#end() 
