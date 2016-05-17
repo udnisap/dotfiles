@@ -33,11 +33,16 @@ Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
 Plugin 'Raimondi/delimitMate'
 Plugin 'moll/vim-node'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'sheerun/vim-polyglot'
 
 
 call vundle#end() 
 filetype plugin indent on
 
+
+"js library syntax
+let g:used_javascript_libs = 'lo-dash,React,Chai'
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
