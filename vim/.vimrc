@@ -31,6 +31,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
+Plugin 'Raimondi/delimitMate'
 
 
 call vundle#end() 
