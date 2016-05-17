@@ -28,10 +28,17 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/vis'                                  
 Plugin 'vim-airline/vim-airline'                                  
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
 
 
 call vundle#end() 
 filetype plugin indent on
+
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " mouse support for scrolling
 set mouse=a
