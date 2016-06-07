@@ -51,6 +51,11 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
+" auto cmds
+" remove fugitive buffers when hidden
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+
 "js library syntax
 let g:used_javascript_libs = 'lo-dash,React,Chai'
 
