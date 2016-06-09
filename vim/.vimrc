@@ -37,6 +37,7 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
 
 
 call vundle#end() 
