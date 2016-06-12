@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'fugitive.vim'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'                      
@@ -38,17 +37,22 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
-
+Bundle 'ervandew/supertab'
 
 call vundle#end() 
 filetype plugin indent on
 
 
+" YCM
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+
 " Utilsnipperts
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
 
@@ -116,11 +120,6 @@ set scrolljump=5
 " search 
 set ignorecase
 set smartcase
-
-" Reload vimrc when edited
-" autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
-"       \ so $MYVIMRC | if has('gui_running') | source $MYGVIMRC | endif |
-"       AirlineRefresh
 
 " Leader
 let mapleader = ","
