@@ -38,6 +38,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
+Bundle 'edkolev/tmuxline.vim'
 
 call vundle#end() 
 filetype plugin indent on
