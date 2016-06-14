@@ -39,6 +39,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 Bundle 'edkolev/tmuxline.vim'
+Bundle 'godlygeek/tabular'
 
 call vundle#end() 
 filetype plugin indent on
