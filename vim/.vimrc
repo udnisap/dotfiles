@@ -41,6 +41,8 @@ Bundle 'ervandew/supertab'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'vim-scripts/ZoomWin'
+Plugin 'christoomey/vim-tmux-navigator'
+
 
 call vundle#end() 
 filetype plugin indent on
