@@ -44,11 +44,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/vis'                                  
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
-
+Bundle 'geekjuice/vim-mocha'
+Plugin 'janko-m/vim-test'
 
 call vundle#end() 
 filetype plugin indent on
-
 
 " YCM
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -127,6 +127,8 @@ set scrolljump=5
 " search 
 set ignorecase
 set smartcase
+set incsearch     " do incremental searching
+nmap <silent> ,/ :nohlsearch<CR>
 
 " Leader
 let mapleader = ","
@@ -141,11 +143,11 @@ let NERDTreeDirArrows = 1
 
 
 set clipboard=unnamed
-set backspace=2   " Backspace deletes like most programs in insert mode
+set backspace=indent,eol,start
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
+set history=5000
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
