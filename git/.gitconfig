@@ -4,6 +4,7 @@
 [core]
   excludesfile = /Users/pasinduperera/.gitignore_global
   editor = vim
+  ignorecase = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path = 
