@@ -234,11 +234,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 set splitbelow
 set splitright
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
