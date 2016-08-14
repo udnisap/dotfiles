@@ -99,9 +99,10 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " ctags
 filetype plugin on
-:set tags=./tags;
-:let g:easytags_dynamic_files = 1
-:let g:easytags_events = ['BufWritePost']
+set tags=./tags;
+let g:easytags_dynamic_files = 1
+let g:easytags_events = ['BufWritePost']
+let g:easytags_opts = ["-R --exclude=.git --exclude=node_modules --exclude=test --exclude=.storybook --exclude=build --exclude=dist --exclude=coverage"]
 
 " Sfiletype plugin onyntactic
 set statusline+=%#warningmsg#
