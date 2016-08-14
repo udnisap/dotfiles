@@ -144,7 +144,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 let mapleader = ","
 
 " ctrlp
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard | grep -vE "(svg|ttf|eot|otf|wof|jpe?g|png|gif)"']
 
 " NERDTree
 nnoremap <Leader>f :NERDTreeFind<Enter>
