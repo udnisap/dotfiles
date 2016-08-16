@@ -170,7 +170,7 @@ if has('folding')
     let &fillchars='vert: '           " less cluttered vertical window separators
   endif
   set foldmethod=indent               " not as cool as syntax, but faster
-  set foldlevelstart=1                " start fully folded
+  set foldlevelstart=999              " start fully folded
 endif
 
 " Switch syntax highlighting on, when the terminal has colors
