@@ -9,43 +9,46 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'fugitive.vim'
 
 " Bundle 'vim-scripts/ZoomWin'
-Bundle 'airblade/vim-gitgutter'                           
-Bundle 'ctrlp/ctrlp.vim'                                  
-Bundle 'easymotion/vim-easymotion'                        
+Bundle 'airblade/vim-gitgutter'
+Bundle 'ctrlp/ctrlp.vim'
+Bundle 'easymotion/vim-easymotion'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Xuyuanp/nerdtree-git-plugin'                      
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'honza/vim-snippets'
-Plugin 'jistr/vim-nerdtree-tabs'                          
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
-Plugin 'mileszs/ack.vim'                                  
+Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-node'
-Plugin 'nelstrom/vim-visual-star-search'                  
+Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'pangloss/vim-javascript'                          
-Plugin 'scrooloose/nerdtree'                              
-Plugin 'scrooloose/syntastic'                             
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'stefandtw/quickfix-reflector.vim'                 
-Plugin 'taglist.vim'                                      
-Plugin 'terryma/vim-expand-region'                     
-Plugin 'terryma/vim-multiple-cursors'                     
-Plugin 'tomtom/tcomment_vim'                              
-Plugin 'tpope/vim-repeat'                               
-Plugin 'tpope/vim-surround'                               
-Plugin 'tpope/vim-unimpaired'                               
-Plugin 'vim-airline/vim-airline'                                  
+Plugin 'stefandtw/quickfix-reflector.vim'
+Plugin 'taglist.vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/vis'                                  
+Plugin 'vim-scripts/vis'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Bundle 'geekjuice/vim-mocha'
 Plugin 'janko-m/vim-test'
+
+" vim-test
+" let test#strategy = "neovim"
 
 call vundle#end() 
 filetype plugin indent on
@@ -102,7 +105,7 @@ filetype plugin on
 set tags=./tags;
 let g:easytags_dynamic_files = 1
 let g:easytags_events = ['BufWritePost']
-let g:easytags_opts = ["-R --exclude=.git --exclude=node_modules --exclude=test --exclude=.storybook --exclude=build --exclude=dist --exclude=coverage"]
+" let g:easytags_opts = ["-R --exclude=.git --exclude=node_modules --exclude=test --exclude=.storybook --exclude=build --exclude=dist --exclude=coverage"]
 
 " Sfiletype plugin onyntactic
 set statusline+=%#warningmsg#
