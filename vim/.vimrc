@@ -114,7 +114,7 @@ set statusline+=%*
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -226,7 +226,7 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 
 " Make it obvious where 80 characters is
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%81v', 120)
 
 " Numbers
 set number
@@ -247,6 +247,8 @@ nnoremap <Down> :echoe "Use j"<CR>
 set splitbelow
 set splitright
 
+" No line wrapping
+set tw=0
 
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
