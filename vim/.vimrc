@@ -10,7 +10,7 @@ Plugin 'fugitive.vim'
 
 " Bundle 'vim-scripts/ZoomWin'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'ctrlp/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'ervandew/supertab'
