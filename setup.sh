@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Install 
 # apt-get install git ack-grep -y
 
@@ -10,6 +10,14 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
    platform='freebsd'
 fi
+
+
+TMPFILE=`mktemp`
+PWD=`pwd`
+wget "$1" -O $TMPFILE
+unzip -d $PWD $TMPFILE
+rm $TMPFILE
+
 
 # setup symlinks
 
@@ -31,7 +39,6 @@ function installVimBinaryPackages {
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   
 }
-confirm "Symlink vim" && echo 'test'
 confirm "Install Vim Binary Addons" && installVimBinaryPackages
 confirm "Symlink vim" && ln -s $PWD/vim/.vimrc ~/.vimrc
 confirm "Symlink tmux" && ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf 
