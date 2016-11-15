@@ -22,6 +22,7 @@
   lg = !"git lg1"
   #git://192.168.43.105/
   serve = daemon --verbose --enable=upload-pack --enable=receive-pack --export-all --base-path=.git --reuseaddr --strict-paths .git/
+  share = daemon --verbose --enable=upload-pack --enable=receive-pack --export-all --base-path=.git --reuseaddr --strict-paths .git/ --enable=receive-pack 
   filelog = log -u
   st = !"git status"
   co = checkout
