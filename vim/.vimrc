@@ -45,7 +45,8 @@ Plugin 'vim-scripts/vis'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Bundle 'geekjuice/vim-mocha'
-Plugin 'janko-m/vim-test'
+" Plugin 'janko-m/vim-test'
+Plugin 'elmcast/elm-vim'
 
 " vim-test
 " let test#strategy = "neovim"
@@ -70,6 +71,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " remove fugitive buffers when hidden
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" elm format on save
+let g:elm_format_autosave = 1
 
 "js library syntax
 let g:used_javascript_libs = 'lo-dash,React,Chai'
@@ -118,10 +121,13 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+" let g:syntastic_error_symbol = '❌'
+" let g:syntastic_style_error_symbol = '⁉️'
+" let g:syntastic_warning_symbol = '⚠️'
+" let g:syntastic_style_warning_symbol = '💩'
+
+" let g:syntastic_auto_loc_list = 1
+" let g:elm_syntastic_show_warnings = 1
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
