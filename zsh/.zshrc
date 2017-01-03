@@ -75,7 +75,7 @@ web-search
 
 # User configuration
 
-DEFAULT_USER=pasinduperera
+DEFAULT_USER=`whoami`
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -110,16 +110,16 @@ source $ZSH/oh-my-zsh.sh
 # Docker init
 eval "$(docker-machine env default)"
 
-export NVM_DIR="/Users/pasinduperera/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="/Users/pasinduperera/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # export ANDROID_HOME="/usr/local/opt/android-sdk"
 export ANDROID_HOME="/usr/local/Cellar/android-sdk/24.4.1/"
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/pasinduperera/google-cloud-sdk/path.zsh.inc'
+# source '/Users/pasinduperera/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/Users/pasinduperera/google-cloud-sdk/completion.zsh.inc'
+# source '/Users/pasinduperera/google-cloud-sdk/completion.zsh.inc'
 
 
 # tabtab source for yo package
