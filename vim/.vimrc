@@ -46,7 +46,6 @@ Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Bundle 'geekjuice/vim-mocha'
 " Plugin 'janko-m/vim-test'
-Plugin 'elmcast/elm-vim'
 
 " vim-test
 " let test#strategy = "neovim"
@@ -257,9 +256,6 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
-
-" Use space always
-:set expandtab
 
 " Always use vertical diffs
 set diffopt+=vertical
