@@ -43,5 +43,6 @@ confirm "Install Vim Binary Addons" && installVimBinaryPackages
 confirm "Symlink vim" && ln -s $PWD/vim/.vimrc ~/.vimrc
 confirm "Symlink tmux" && ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf 
 confirm "Symlink git" && ln -s $PWD/git/.gitconfig ~/.gitconfig 
+confirm "Symlink zsh" && ln -s $PWD/zsh/.zshrc ~/.zshrc 
 
 
