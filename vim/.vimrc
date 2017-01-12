@@ -265,3 +265,8 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
+" vim-tmux-navigator
+" save when tmux leave the pane
+let g:tmux_navigator_save_on_switch = 1
+" pane navigation for ctrl-h doesnt work in neovim
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
