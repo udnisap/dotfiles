@@ -50,6 +50,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+java
 ack
 adb
 bower
@@ -76,11 +77,12 @@ web-search
 # User configuration
 
 DEFAULT_USER=`whoami`
+export NPM_TOKEN=''
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-. `brew --prefix`/etc/profile.d/z.sh
+source `brew --prefix`/etc/profile.d/z.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
