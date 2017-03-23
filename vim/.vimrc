@@ -45,6 +45,7 @@ Plugin 'vim-scripts/vis'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Bundle 'geekjuice/vim-mocha'
+Bundle 'flowtype/vim-flow'
 " Plugin 'janko-m/vim-test'
 
 " vim-test
