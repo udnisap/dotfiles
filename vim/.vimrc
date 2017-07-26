@@ -46,7 +46,12 @@ Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Bundle 'geekjuice/vim-mocha'
 Bundle 'flowtype/vim-flow'
+Bundle 'leafgarland/typescript-vim'
+Plugin 'sbdchd/neoformat'
+" Plugin 'Shougo/deoplete.nvim'
+" Plugin 'mhartington/nvim-typescript'
 " Plugin 'janko-m/vim-test'
+Plugin 'elmcast/elm-vim'
 
 " vim-test
 " let test#strategy = "neovim"
@@ -58,6 +63,10 @@ filetype plugin indent on
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+" if !exists("g:ycm_semantic_triggers")
+"   let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers['typescript'] = ['.']
 
 
 " Utilsnipperts
@@ -120,14 +129,16 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 " let g:syntastic_error_symbol = '❌'
 " let g:syntastic_style_error_symbol = '⁉️'
 " let g:syntastic_warning_symbol = '⚠️'
 " let g:syntastic_style_warning_symbol = '💩'
 
-" let g:syntastic_auto_loc_list = 1
-" let g:elm_syntastic_show_warnings = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
@@ -271,3 +282,10 @@ endif
 let g:tmux_navigator_save_on_switch = 1
 " pane navigation for ctrl-h doesnt work in neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+autocmd BufWritePre *.js Neoformat
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--single-quote'],
+            \ 'stdin': 1,
+            \ }
