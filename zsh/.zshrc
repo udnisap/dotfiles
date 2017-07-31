@@ -127,3 +127,7 @@ export ANDROID_HOME="/usr/local/Cellar/android-sdk/24.4.1/"
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
 # [[ -f /Users/pasinduperera/.nvm/versions/node/v5.0.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/pasinduperera/.nvm/versions/node/v5.0.0/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
+#
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/Users/pasinduperera/anaconda3/bin:$PATH"
