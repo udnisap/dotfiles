@@ -130,7 +130,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Syntastic
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
@@ -288,9 +288,3 @@ let g:tmux_navigator_save_on_switch = 1
 " pane navigation for ctrl-h doesnt work in neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
-autocmd BufWritePre *.js Neoformat
-let g:neoformat_javascript_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--single-quote'],
-            \ 'stdin': 1,
-            \ }
