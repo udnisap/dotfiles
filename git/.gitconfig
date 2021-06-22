@@ -3,7 +3,7 @@
   email = udnisap@users.noreply.github.com
 [core]
   excludesfile = /Users/undnisap/.gitignore_global
-  editor = vim
+	editor = nvim
   ignorecase = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -42,3 +42,13 @@
   autocorrect = 10
 [branch]
   autosetupmerge = always
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
+[diff]
+  tool = vimdiff
