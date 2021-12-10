@@ -14,7 +14,7 @@ Plug 'kien/ctrlp.vim'
 " ctrlp alternative for file serach
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'sheerun/vim-polyglot'
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Bundle 'vim-scripts/ZoomWin'
@@ -59,7 +59,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plugin 'HerringtonDarkholme/yats.vim'
 " Plugin 'elmcast/elm-vim'
 " " Plugin 'Quramy/tsuquyomi'
-" Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " vim-test
@@ -175,7 +175,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 let mapleader = ","
 "
 " " ctrlp
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard | grep -vE "\.(svg|ttf|eot|otf|wof|jpe?g|png|gif)"']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard | grep -vE "\.(svg|ttf|eot|otf|wof|jpe?g|java|png|gif)"']
 "
 " NERDTree
 nnoremap <Leader>f :NERDTreeFind<Enter>
@@ -299,9 +299,12 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
-let b:ale_fixers = ['prettier']
+let g:ale_fixers = ['prettier']
+
 " Fix files automatically on save
 autocmd BufWritePre,InsertLeave *.ts, ALEFix prettier
+autocmd BufWritePre,InsertLeave *.tsx, ALEFix prettier
+autocmd BufWritePre,InsertLeave *.jsx, ALEFix prettier
 autocmd BufWritePre,InsertLeave *.html ALEFix prettier
 autocmd BufWritePre,InsertLeave *.*ss ALEFix prettier
 autocmd BufWritePre,InsertLeave *.js ALEFix prettier
