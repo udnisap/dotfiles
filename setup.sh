@@ -35,14 +35,11 @@ confirm () {
     esac
 }
 
-function installVimBinaryPackages {
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  
-}
-confirm "Install Vim Binary Addons" && installVimBinaryPackages
-confirm "Symlink vim" && ln -s $PWD/vim/.vimrc ~/.vimrc
-confirm "Symlink tmux" && ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf 
-confirm "Symlink git" && ln -s $PWD/git/.gitconfig ~/.gitconfig 
-confirm "Symlink zsh" && ln -s $PWD/zsh/.zshrc ~/.zshrc 
+# LazyVim bootstraps lazy.nvim and all plugins on first launch of nvim,
+# so no manual plugin install step is required.
+confirm "Symlink nvim (LazyVim)" && mkdir -p ~/.config && ln -s $PWD/nvim ~/.config/nvim
+confirm "Symlink tmux" && ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf
+confirm "Symlink git" && ln -s $PWD/git/.gitconfig ~/.gitconfig
+confirm "Symlink zsh" && ln -s $PWD/zsh/.zshrc ~/.zshrc
 
 
