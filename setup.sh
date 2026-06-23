@@ -42,4 +42,8 @@ confirm "Symlink tmux" && ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf
 confirm "Symlink git" && ln -s $PWD/git/.gitconfig ~/.gitconfig
 confirm "Symlink zsh" && ln -s $PWD/zsh/.zshrc ~/.zshrc
 
+# Claude Code user config (~/.claude). Only settings.json is tracked here;
+# runtime data (projects, jobs, sessions, etc.) stays local and untracked.
+confirm "Symlink Claude Code config" && mkdir -p ~/.claude && ln -s $PWD/claude/settings.json ~/.claude/settings.json
+
 
