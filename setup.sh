@@ -42,4 +42,14 @@ confirm "Symlink tmux" && ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf
 confirm "Symlink git" && ln -s $PWD/git/.gitconfig ~/.gitconfig
 confirm "Symlink zsh" && ln -s $PWD/zsh/.zshrc ~/.zshrc
 
+# Claude Code user config (~/.claude). Runtime data (projects, jobs, sessions,
+# caches, history) is intentionally NOT tracked — only hand-authored config.
+if confirm "Symlink Claude Code config"; then
+    mkdir -p ~/.claude ~/.claude/skills
+    ln -s $PWD/claude/settings.json ~/.claude/settings.json
+    ln -s $PWD/claude/statusline-command.sh ~/.claude/statusline-command.sh
+    ln -s $PWD/claude/circleback-daily-sync.sh ~/.claude/circleback-daily-sync.sh
+    ln -s $PWD/claude/skills/tmux-split ~/.claude/skills/tmux-split
+fi
+
 
