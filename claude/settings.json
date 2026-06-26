@@ -8,5 +8,9 @@
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
   "agentPushNotifEnabled": true,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
 }

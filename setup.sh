@@ -47,6 +47,7 @@ confirm "Symlink zsh" && ln -s $PWD/zsh/.zshrc ~/.zshrc
 if confirm "Symlink Claude Code config"; then
     mkdir -p ~/.claude ~/.claude/skills
     ln -s $PWD/claude/settings.json ~/.claude/settings.json
+    ln -s $PWD/claude/CLAUDE.md ~/.claude/CLAUDE.md
     ln -s $PWD/claude/statusline-command.sh ~/.claude/statusline-command.sh
     ln -s $PWD/claude/circleback-daily-sync.sh ~/.claude/circleback-daily-sync.sh
     ln -s $PWD/claude/skills/tmux-split ~/.claude/skills/tmux-split
