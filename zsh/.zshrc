@@ -116,7 +116,12 @@ PROMPT+=' $(git_prompt_info)'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cc="claude agents --cwd ./"
+# Fetch latest remote refs before launching Claude agents, so new worktrees
+# (worktree.baseRef = fresh) branch off the up-to-date origin/<main>.
+cc() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git fetch --quiet origin
+  claude agents --cwd ./
+}
 export PATH="$HOME/.local/bin:$PATH"
  . /opt/homebrew/etc/profile.d/z.s
 
