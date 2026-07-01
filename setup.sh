@@ -59,10 +59,13 @@ confirm "Symlink zsh" && link $PWD/zsh/.zshrc ~/.zshrc
 # Claude Code user config (~/.claude). Runtime data (projects, jobs, sessions,
 # caches, history) is intentionally NOT tracked — only hand-authored config.
 if confirm "Symlink Claude Code config"; then
-    mkdir -p ~/.claude ~/.claude/skills
+    mkdir -p ~/.claude ~/.claude/commands ~/.claude/scripts
     link $PWD/claude/settings.json ~/.claude/settings.json
     link $PWD/claude/CLAUDE.md ~/.claude/CLAUDE.md
     link $PWD/claude/statusline-command.sh ~/.claude/statusline-command.sh
     link $PWD/claude/circleback-daily-sync.sh ~/.claude/circleback-daily-sync.sh
-    link $PWD/claude/skills/tmux-split ~/.claude/skills/tmux-split
+    link $PWD/claude/commands/tmux-split.md ~/.claude/commands/tmux-split.md
+    link $PWD/claude/scripts/tmux-split.sh ~/.claude/scripts/tmux-split.sh
+    # tmux-split moved from a skill to a command; drop the stale skill symlink.
+    [ -L ~/.claude/skills/tmux-split ] && rm -f ~/.claude/skills/tmux-split
 fi
