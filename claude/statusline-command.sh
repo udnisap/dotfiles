@@ -31,7 +31,7 @@ pwd_display="${cwd/#$HOME/~}"
 # Model display name
 model=$(echo "$input" | jq -r '.model.display_name')
 
-# Context remaining
+# Context fill % (how full the window is = 100 - remaining)
 remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
 
 # Build the status line
@@ -50,5 +50,6 @@ printf ' \033[2m%s\033[0m' "$pwd_display"
 printf ' \033[2m%s\033[0m' "$model"
 
 if [ -n "$remaining" ]; then
-  printf ' \033[2mctx: %.1f%%\033[0m' "$remaining"
+  fill=$(awk "BEGIN { printf \"%.1f\", 100 - $remaining }")
+  printf ' \033[2mctx: %s%%\033[0m' "$fill"
 fi
