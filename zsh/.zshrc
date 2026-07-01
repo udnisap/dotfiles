@@ -116,6 +116,7 @@ PROMPT+=' $(git_prompt_info)'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cc="claude agents --cwd ./"
 export PATH="$HOME/.local/bin:$PATH"
  . /opt/homebrew/etc/profile.d/z.s
 
