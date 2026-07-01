@@ -60,6 +60,15 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## 5. Worktrees Branch Off Main
+
+**Always base new worktrees on the up-to-date main branch, never on local state.**
+
+I work almost exclusively in git worktrees. When creating one:
+- Fetch first, then branch off the remote main branch, e.g. `git fetch origin && git worktree add ../<name> -b <name> origin/<main>`.
+- Detect the main branch rather than assuming (`git symbolic-ref refs/remotes/origin/HEAD` → often `main` or `master`).
+- Don't branch off the local main ref or the current worktree's HEAD — those may be stale.
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.

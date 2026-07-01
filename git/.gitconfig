@@ -52,3 +52,7 @@
   prompt = false
 [diff]
   tool = vimdiff
+# Machine-specific identity, signing key, and maintenance config live in
+# ~/.gitconfig.local (untracked). Processed last, so it overrides values above.
+[include]
+  path = ~/.gitconfig.local
