@@ -15,5 +15,8 @@
   },
   "permissions": {
     "defaultMode": "auto"
+  },
+  "worktree": {
+    "baseRef": "fresh"
   }
 }
