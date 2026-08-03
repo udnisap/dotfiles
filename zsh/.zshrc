@@ -123,7 +123,7 @@ cc() {
   claude agents --cwd ./
 }
 export PATH="$HOME/.local/bin:$PATH"
- . /opt/homebrew/etc/profile.d/z.s
+. /opt/homebrew/etc/profile.d/z.sh
 
 # pnpm
 export PNPM_HOME="/Users/udnisap/Library/pnpm"
@@ -142,3 +142,6 @@ export PATH="/Users/udnisap/.codeium/windsurf/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias br="agent-browser --auto-connect"
+#export AGENT_BROWSER_AUTO_CONNECT=1
