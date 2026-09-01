@@ -17,6 +17,7 @@ Personal machine configuration, symlinked into place by `setup.sh`.
 | `claude/statusline-command.sh` | `~/.claude/statusline-command.sh` | Claude Code status line script (dir, branch, model, ctx) |
 | `claude/circleback-daily-sync.sh` | `~/.claude/circleback-daily-sync.sh` | Headless Claude job that syncs Circleback meeting notes |
 | `claude/skills/tmux-split` | `~/.claude/skills/tmux-split` | Claude Code skill: `/tmux-split` opens a tmux pane in the active worktree |
+| `features/` | — | Longer write-ups of the shell/Claude helpers ([index](#features)) |
 
 ## Install
 
@@ -47,15 +48,21 @@ caches, `history.jsonl`, etc.) is intentionally **not** tracked.
 - **status line** — `statusline-command.sh` renders dir, git branch, model, and
   remaining context; wired up via `settings.json`.
 
+## Features
+
+Longer write-ups for things that need more than a table row live in
+[`features/`](features/):
+
+| Doc | What it covers |
+|---|---|
+| [`cs-ch-aliases.md`](features/cs-ch-aliases.md) | `cs` / `ch` — say what you want in plain English, get a shell command, confirm before it runs. Includes the Handy dictation workflow. |
+
 ## Shell helpers (`zsh/.zshrc`)
 
 - **`cc`** — fetches latest remote refs, then opens the Claude agents picker.
 - **`cs` / `ch`** — ask Claude in plain English for a *single shell command*,
-  then confirm before it runs. `cs` uses sonnet (trickier, multi-step lookups),
-  `ch` uses haiku (fast recall). The model runs with `--tools ""`, so it can only
-  emit text — nothing executes until you press a key, and the command then runs
-  in your current shell, so `cd` and `export` stick. It is also pushed into zsh
-  history, so Up-arrow recalls it.
+  then confirm before it runs. Nothing executes until you press a key. See
+  [`features/cs-ch-aliases.md`](features/cs-ch-aliases.md) for the full write-up.
 
   ```
   $ cs list the folder localhost:3000 is running on
@@ -64,8 +71,3 @@ caches, `history.jsonl`, etc.) is intentionally **not** tracked.
 
   Run? [Y/e/x/n]
   ```
-
-  Enter or `y` runs it, `e` edits it inline first, `x` explains what it does,
-  anything else cancels. Questions containing `?` or `*` are safe (the aliases
-  use `noglob`), but ones containing `>`, `|` or `#` still need quoting:
-  `cs 'show files > 100mb'`.
