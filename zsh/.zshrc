@@ -122,6 +122,62 @@ cc() {
   git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git fetch --quiet origin
   claude agents --cwd ./
 }
+
+# Ask Claude for a single shell command, confirm, then run it.
+# `cs` uses sonnet (trickier, multi-step lookups), `ch` uses haiku (fast recall).
+# The model gets NO tools (--tools ""); it only writes text. Nothing executes
+# until you press a key, and it runs in THIS shell so `cd`/`export` stick.
+_cc_cmd() {
+  local model="$1"; shift
+  local prompt="$*"
+  if [[ -z "$prompt" ]]; then
+    print -u2 "usage: cs|ch <what you want to do>"
+    return 2
+  fi
+
+  local sys="Translate the request into ONE shell command for macOS zsh.
+Output ONLY the command itself: no markdown fences, no backticks, no commentary.
+Prefer a single line, using pipes where needed.
+Current directory: $PWD"
+
+  local cmd
+  cmd=$(claude -p --model "$model" --tools "" --system-prompt "$sys" -- "$prompt") || return $?
+
+  # Defensive: strip stray code fences / blank lines if the model adds them.
+  cmd=$(print -r -- "$cmd" | sed -e '/^[[:space:]]*```/d' -e '/^[[:space:]]*$/d')
+  [[ -n "$cmd" ]] || { print -u2 "no command returned"; return 1; }
+
+  while true; do
+    print -r -- ""
+    print -r -- "  $cmd"
+    print -rn -- $'\nRun? [Y/e/x/n] '
+    local ans; read -r ans
+    case "${ans:l}" in
+      ""|y|yes)
+        print -s -- "$cmd"   # zsh history: Up-arrow recalls it
+        eval "$cmd"
+        return $?
+        ;;
+      e)
+        vared -p '> ' -c cmd
+        ;;
+      x)
+        claude -p --model haiku --tools "" \
+          --system-prompt "Explain this shell command concisely, one short line per stage. No preamble." \
+          -- "$cmd"
+        ;;
+      *)
+        print "cancelled"
+        return 130
+        ;;
+    esac
+  done
+}
+
+# noglob so questions containing ? or * don't trip zsh globbing.
+alias cs='noglob _cc_cmd sonnet'
+alias ch='noglob _cc_cmd haiku'
+
 export PATH="$HOME/.local/bin:$PATH"
 . /opt/homebrew/etc/profile.d/z.sh
 

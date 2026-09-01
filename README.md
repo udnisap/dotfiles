@@ -17,6 +17,7 @@ Personal machine configuration, symlinked into place by `setup.sh`.
 | `claude/statusline-command.sh` | `~/.claude/statusline-command.sh` | Claude Code status line script (dir, branch, model, ctx) |
 | `claude/circleback-daily-sync.sh` | `~/.claude/circleback-daily-sync.sh` | Headless Claude job that syncs Circleback meeting notes |
 | `claude/skills/tmux-split` | `~/.claude/skills/tmux-split` | Claude Code skill: `/tmux-split` opens a tmux pane in the active worktree |
+| `features/` | — | Longer write-ups of the shell/Claude helpers ([index](#features)) |
 
 ## Install
 
@@ -46,3 +47,27 @@ caches, `history.jsonl`, etc.) is intentionally **not** tracked.
   "vertical" for a stacked split instead of side-by-side.
 - **status line** — `statusline-command.sh` renders dir, git branch, model, and
   remaining context; wired up via `settings.json`.
+
+## Features
+
+Longer write-ups for things that need more than a table row live in
+[`features/`](features/):
+
+| Doc | What it covers |
+|---|---|
+| [`cs-ch-aliases.md`](features/cs-ch-aliases.md) | `cs` / `ch` — say what you want in plain English, get a shell command, confirm before it runs. Includes the Handy dictation workflow. |
+
+## Shell helpers (`zsh/.zshrc`)
+
+- **`cc`** — fetches latest remote refs, then opens the Claude agents picker.
+- **`cs` / `ch`** — ask Claude in plain English for a *single shell command*,
+  then confirm before it runs. Nothing executes until you press a key. See
+  [`features/cs-ch-aliases.md`](features/cs-ch-aliases.md) for the full write-up.
+
+  ```
+  $ cs list the folder localhost:3000 is running on
+
+    lsof -i :3000 -t | xargs -I{} lsof -p {} | awk '$4=="cwd" {print $NF}'
+
+  Run? [Y/e/x/n]
+  ```
