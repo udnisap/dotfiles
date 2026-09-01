@@ -46,3 +46,26 @@ caches, `history.jsonl`, etc.) is intentionally **not** tracked.
   "vertical" for a stacked split instead of side-by-side.
 - **status line** — `statusline-command.sh` renders dir, git branch, model, and
   remaining context; wired up via `settings.json`.
+
+## Shell helpers (`zsh/.zshrc`)
+
+- **`cc`** — fetches latest remote refs, then opens the Claude agents picker.
+- **`cs` / `ch`** — ask Claude in plain English for a *single shell command*,
+  then confirm before it runs. `cs` uses sonnet (trickier, multi-step lookups),
+  `ch` uses haiku (fast recall). The model runs with `--tools ""`, so it can only
+  emit text — nothing executes until you press a key, and the command then runs
+  in your current shell, so `cd` and `export` stick. It is also pushed into zsh
+  history, so Up-arrow recalls it.
+
+  ```
+  $ cs list the folder localhost:3000 is running on
+
+    lsof -i :3000 -t | xargs -I{} lsof -p {} | awk '$4=="cwd" {print $NF}'
+
+  Run? [Y/e/x/n]
+  ```
+
+  Enter or `y` runs it, `e` edits it inline first, `x` explains what it does,
+  anything else cancels. Questions containing `?` or `*` are safe (the aliases
+  use `noglob`), but ones containing `>`, `|` or `#` still need quoting:
+  `cs 'show files > 100mb'`.
